@@ -1,55 +1,51 @@
 
-
-
 # simplegraph
 
 > Simple Graph Data Types and Basic Algorithms
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml)
 [![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
-[![Coverage Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://codecov.io/github/gaborcsardi/simplegraph?branch=main)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://codecov.io/github/gaborcsardi/simplegraph?branch=main)
 
-Simple classic graph algorithms for simple graph classes.
-Graphs may possess vertex and edge attributes. 'simplegraph' has
-no dependencies and it is written entirely in R, so it is easy to
-install.
+Simple classic graph algorithms for simple graph classes. Graphs may
+possess vertex and edge attributes. ‘simplegraph’ has no dependencies
+and it is written entirely in R, so it is easy to install.
 
 ## Installation
 
-
-```r
+``` r
 devtools::install_github("gaborcsardi/simplegraph")
 ```
 
 ## Usage
 
-
-```r
+``` r
 library(simplegraph)
 ```
 
-```
-#> 
-#> Attaching package: 'simplegraph'
-#> 
-#> The following object is masked from 'package:base':
-#> 
-#>     order
-```
+    #> 
+    #> Attaching package: 'simplegraph'
+
+    #> The following object is masked from 'package:base':
+    #> 
+    #>     order
 
 ## Creating graphs
 
-`simplegraph` has two ways of creating graphs from data.
-The first one is an adjacency list containing vertex names.
-Note that all graphs are directed in `simplegraph`. Undirected graphs
-can be emulated with bidirectional edges.
+`simplegraph` has two ways of creating graphs from data. The first one
+is an adjacency list containing vertex names. Note that all graphs are
+directed in `simplegraph`. Undirected graphs can be emulated with
+bidirectional edges.
 
-This is Euler's famous graph of the bridges of Koenigsberg:
+This is Euler’s famous graph of the bridges of Koenigsberg:
 
-
-```r
+``` r
 bridges <- graph(list(
   "Altstadt-Loebenicht" = c(
     "Kneiphof",
@@ -77,41 +73,38 @@ bridges <- graph(list(
 bridges
 ```
 
-```
-#> $`Altstadt-Loebenicht`
-#> [1] "Kneiphof" "Kneiphof" "Lomse"   
-#> 
-#> $Kneiphof
-#> [1] "Altstadt-Loebenicht" "Altstadt-Loebenicht" "Vorstadt-Haberberg" 
-#> [4] "Vorstadt-Haberberg"  "Lomse"              
-#> 
-#> $`Vorstadt-Haberberg`
-#> [1] "Kneiphof" "Kneiphof" "Lomse"   
-#> 
-#> $Lomse
-#> [1] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg" 
-#> 
-#> attr(,"class")
-#> [1] "simplegraph_adjlist" "simplegraph"         "list"
-```
+    #> $`Altstadt-Loebenicht`
+    #> [1] "Kneiphof" "Kneiphof" "Lomse"   
+    #> 
+    #> $Kneiphof
+    #> [1] "Altstadt-Loebenicht" "Altstadt-Loebenicht" "Vorstadt-Haberberg" 
+    #> [4] "Vorstadt-Haberberg"  "Lomse"              
+    #> 
+    #> $`Vorstadt-Haberberg`
+    #> [1] "Kneiphof" "Kneiphof" "Lomse"   
+    #> 
+    #> $Lomse
+    #> [1] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg" 
+    #> 
+    #> attr(,"class")
+    #> [1] "simplegraph_adjlist" "simplegraph"         "list"
 
 ## Graph metadata
 
-`simplegraph` supports graph metadata on vertices and edges.
-To create a graph with metadata, pass two data frames to `graph`,
-one for vertices, one for edges.
+`simplegraph` supports graph metadata on vertices and edges. To create a
+graph with metadata, pass two data frames to `graph`, one for vertices,
+one for edges.
 
-The first column of the vertex data frame must contain the ids of
-the vertices in a character vector.
+The first column of the vertex data frame must contain the ids of the
+vertices in a character vector.
 
-The first columns of the edge data frame must contain the edges of
-the graph, i.e. the tail vertices and the head vertices, given
-by the vertex ids.
+The first columns of the edge data frame must contain the edges of the
+graph, i.e. the tail vertices and the head vertices, given by the vertex
+ids.
 
 Here is an example for a graph of actors and movies.
 
-
-```r
+``` r
 vertices <- data.frame(
   stringsAsFactors = FALSE,
   name = c("Tom Hanks", "Cate Blanchett", "Matt Damon", "Kate Winslet",
@@ -133,84 +126,68 @@ edges <- data.frame(
 actors <- graph(vertices, edges)
 ```
 
-
-```r
+``` r
 vertex_ids(actors)
 ```
 
-```
-#> [1] "Tom Hanks"               "Cate Blanchett"         
-#> [3] "Matt Damon"              "Kate Winslet"           
-#> [5] "Saving Private Ryan"     "Contagion"              
-#> [7] "The Talented Mr. Ripley"
-```
+    #> [1] "Tom Hanks"               "Cate Blanchett"         
+    #> [3] "Matt Damon"              "Kate Winslet"           
+    #> [5] "Saving Private Ryan"     "Contagion"              
+    #> [7] "The Talented Mr. Ripley"
 
-```r
+``` r
 vertices(actors)
 ```
 
-```
-#>                      name  what       born gender year
-#> 1               Tom Hanks actor 1956-07-09      M   NA
-#> 2          Cate Blanchett actor 1966-05-26      F   NA
-#> 3              Matt Damon actor 1970-10-08      M   NA
-#> 4            Kate Winslet actor 1975-10-05      F   NA
-#> 5     Saving Private Ryan movie       <NA>   <NA> 1998
-#> 6               Contagion movie       <NA>   <NA> 2011
-#> 7 The Talented Mr. Ripley movie       <NA>   <NA> 1999
-```
+    #>                      name  what       born gender year
+    #> 1               Tom Hanks actor 1956-07-09      M   NA
+    #> 2          Cate Blanchett actor 1966-05-26      F   NA
+    #> 3              Matt Damon actor 1970-10-08      M   NA
+    #> 4            Kate Winslet actor 1975-10-05      F   NA
+    #> 5     Saving Private Ryan movie       <NA>   <NA> 1998
+    #> 6               Contagion movie       <NA>   <NA> 2011
+    #> 7 The Talented Mr. Ripley movie       <NA>   <NA> 1999
 
-```r
+``` r
 edges(actors)
 ```
 
-```
-#>            actor                   movie
-#> 1      Tom Hanks     Saving Private Ryan
-#> 2 Cate Blanchett The Talented Mr. Ripley
-#> 3     Matt Damon     Saving Private Ryan
-#> 4     Matt Damon The Talented Mr. Ripley
-#> 5   Kate Winslet               Contagion
-```
+    #>            actor                   movie
+    #> 1      Tom Hanks     Saving Private Ryan
+    #> 2 Cate Blanchett The Talented Mr. Ripley
+    #> 3     Matt Damon     Saving Private Ryan
+    #> 4     Matt Damon The Talented Mr. Ripley
+    #> 5   Kate Winslet               Contagion
 
 ## Basic queries
 
 Number of vertices and edges:
 
-
-```r
+``` r
 order(bridges)
 ```
 
-```
-#> [1] 4
-```
+    #> [1] 4
 
-```r
+``` r
 size(bridges)
 ```
 
-```
-#> [1] 14
-```
+    #> [1] 14
 
 Adjacenct vertices:
 
-
-```r
+``` r
 adjacent_vertices(bridges)$Lomse
 ```
 
-```
-#> [1] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg" 
-#> [4] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg"
-```
+    #> [1] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg" 
+    #> [4] "Altstadt-Loebenicht" "Kneiphof"            "Vorstadt-Haberberg"
 
 This is a graph of function calls from the R package `pkgsnap`
-(https://github.com/mangothecat/pkgsnap):
+(<https://github.com/mangothecat/pkgsnap>):
 
-
-```r
+``` r
 funcs <- graph(list(
   drop_internal = character(0),
   get_deps = c("get_description", "parse_deps",
@@ -241,212 +218,179 @@ funcs <- graph(list(
 
 List of vertices:
 
-
-```r
+``` r
 vertices(funcs)
 ```
 
-```
-#>                        name
-#> 1             drop_internal
-#> 2                  get_deps
-#> 3           get_description
-#> 4                parse_deps
-#> 5                 cran_file
-#> 6             download_urls
-#> 7         filename_from_url
-#> 8              get_pkg_type
-#> 9              pkg_download
-#> 10          r_minor_version
-#> 11             try_download
-#> 12        drop_missing_deps
-#> 13            install_order
-#> 14                  restore
-#> 15                     snap
-#> 16                     %||%
-#> 17               data_frame
-#> 18               dir_exists
-#> 19        pkg_from_filename
-#> 20 split_pkg_names_versions
-#> 21                 str_trim
-```
+    #>                        name
+    #> 1             drop_internal
+    #> 2                  get_deps
+    #> 3           get_description
+    #> 4                parse_deps
+    #> 5                 cran_file
+    #> 6             download_urls
+    #> 7         filename_from_url
+    #> 8              get_pkg_type
+    #> 9              pkg_download
+    #> 10          r_minor_version
+    #> 11             try_download
+    #> 12        drop_missing_deps
+    #> 13            install_order
+    #> 14                  restore
+    #> 15                     snap
+    #> 16                     %||%
+    #> 17               data_frame
+    #> 18               dir_exists
+    #> 19        pkg_from_filename
+    #> 20 split_pkg_names_versions
+    #> 21                 str_trim
 
 List of edges:
 
-
-```r
+``` r
 edges(funcs)
 ```
 
-```
-#>                        from                       to
-#> 1                  get_deps          get_description
-#> 2                  get_deps               parse_deps
-#> 3                  get_deps                     %||%
-#> 4                  get_deps            drop_internal
-#> 5           get_description        pkg_from_filename
-#> 6                parse_deps                 str_trim
-#> 7                 cran_file             get_pkg_type
-#> 8                 cran_file          r_minor_version
-#> 9                 cran_file                cran_file
-#> 10            download_urls split_pkg_names_versions
-#> 11            download_urls                cran_file
-#> 12             pkg_download               dir_exists
-#> 13             pkg_download            download_urls
-#> 14             pkg_download        filename_from_url
-#> 15             pkg_download             try_download
-#> 16                  restore             pkg_download
-#> 17                  restore        drop_missing_deps
-#> 18                  restore            install_order
-#> 19                  restore                 get_deps
-#> 20 split_pkg_names_versions               data_frame
-```
+    #>                        from                       to
+    #> 1                  get_deps          get_description
+    #> 2                  get_deps               parse_deps
+    #> 3                  get_deps                     %||%
+    #> 4                  get_deps            drop_internal
+    #> 5           get_description        pkg_from_filename
+    #> 6                parse_deps                 str_trim
+    #> 7                 cran_file             get_pkg_type
+    #> 8                 cran_file          r_minor_version
+    #> 9                 cran_file                cran_file
+    #> 10            download_urls split_pkg_names_versions
+    #> 11            download_urls                cran_file
+    #> 12             pkg_download               dir_exists
+    #> 13             pkg_download            download_urls
+    #> 14             pkg_download        filename_from_url
+    #> 15             pkg_download             try_download
+    #> 16                  restore             pkg_download
+    #> 17                  restore        drop_missing_deps
+    #> 18                  restore            install_order
+    #> 19                  restore                 get_deps
+    #> 20 split_pkg_names_versions               data_frame
 
 ## Manipulation
 
-Transposing a graph changes the directions of all edges to
-the opposite.
+Transposing a graph changes the directions of all edges to the opposite.
 
-
-```r
+``` r
 edges(transpose(funcs))
 ```
 
-```
-#>                        from                       to
-#> 1             drop_internal                 get_deps
-#> 2                  get_deps                  restore
-#> 3           get_description                 get_deps
-#> 4                parse_deps                 get_deps
-#> 5                 cran_file                cran_file
-#> 6                 cran_file            download_urls
-#> 7             download_urls             pkg_download
-#> 8         filename_from_url             pkg_download
-#> 9              get_pkg_type                cran_file
-#> 10             pkg_download                  restore
-#> 11          r_minor_version                cran_file
-#> 12             try_download             pkg_download
-#> 13        drop_missing_deps                  restore
-#> 14            install_order                  restore
-#> 15                     %||%                 get_deps
-#> 16               data_frame split_pkg_names_versions
-#> 17               dir_exists             pkg_download
-#> 18        pkg_from_filename          get_description
-#> 19 split_pkg_names_versions            download_urls
-#> 20                 str_trim               parse_deps
-```
+    #>                        from                       to
+    #> 1             drop_internal                 get_deps
+    #> 2                  get_deps                  restore
+    #> 3           get_description                 get_deps
+    #> 4                parse_deps                 get_deps
+    #> 5                 cran_file                cran_file
+    #> 6                 cran_file            download_urls
+    #> 7             download_urls             pkg_download
+    #> 8         filename_from_url             pkg_download
+    #> 9              get_pkg_type                cran_file
+    #> 10             pkg_download                  restore
+    #> 11          r_minor_version                cran_file
+    #> 12             try_download             pkg_download
+    #> 13        drop_missing_deps                  restore
+    #> 14            install_order                  restore
+    #> 15                     %||%                 get_deps
+    #> 16               data_frame split_pkg_names_versions
+    #> 17               dir_exists             pkg_download
+    #> 18        pkg_from_filename          get_description
+    #> 19 split_pkg_names_versions            download_urls
+    #> 20                 str_trim               parse_deps
 
 ## Walks on graphs
 
 Breadth-first search:
 
-
-```r
+``` r
 bfs(funcs)
 ```
 
-```
-#>  [1] "drop_internal"            "get_deps"                
-#>  [3] "get_description"          "parse_deps"              
-#>  [5] "%||%"                     "pkg_from_filename"       
-#>  [7] "str_trim"                 "cran_file"               
-#>  [9] "get_pkg_type"             "r_minor_version"         
-#> [11] "download_urls"            "split_pkg_names_versions"
-#> [13] "data_frame"               "filename_from_url"       
-#> [15] "pkg_download"             "dir_exists"              
-#> [17] "try_download"             "drop_missing_deps"       
-#> [19] "install_order"            "restore"                 
-#> [21] "snap"
-```
+    #>  [1] "drop_internal"            "get_deps"                
+    #>  [3] "get_description"          "parse_deps"              
+    #>  [5] "%||%"                     "pkg_from_filename"       
+    #>  [7] "str_trim"                 "cran_file"               
+    #>  [9] "get_pkg_type"             "r_minor_version"         
+    #> [11] "download_urls"            "split_pkg_names_versions"
+    #> [13] "data_frame"               "filename_from_url"       
+    #> [15] "pkg_download"             "dir_exists"              
+    #> [17] "try_download"             "drop_missing_deps"       
+    #> [19] "install_order"            "restore"                 
+    #> [21] "snap"
 
 ## Topological sort
 
-
-```r
+``` r
 topological_sort(simplify(funcs))
 ```
 
-```
-#>  [1] "snap"                     "restore"                 
-#>  [3] "install_order"            "drop_missing_deps"       
-#>  [5] "pkg_download"             "try_download"            
-#>  [7] "dir_exists"               "filename_from_url"       
-#>  [9] "download_urls"            "split_pkg_names_versions"
-#> [11] "data_frame"               "cran_file"               
-#> [13] "r_minor_version"          "get_pkg_type"            
-#> [15] "get_deps"                 "%||%"                    
-#> [17] "parse_deps"               "str_trim"                
-#> [19] "get_description"          "pkg_from_filename"       
-#> [21] "drop_internal"
-```
+    #>  [1] "snap"                     "restore"                 
+    #>  [3] "install_order"            "drop_missing_deps"       
+    #>  [5] "pkg_download"             "try_download"            
+    #>  [7] "dir_exists"               "filename_from_url"       
+    #>  [9] "download_urls"            "split_pkg_names_versions"
+    #> [11] "data_frame"               "cran_file"               
+    #> [13] "r_minor_version"          "get_pkg_type"            
+    #> [15] "get_deps"                 "%||%"                    
+    #> [17] "parse_deps"               "str_trim"                
+    #> [19] "get_description"          "pkg_from_filename"       
+    #> [21] "drop_internal"
 
 ## Multi-graphs and graphs with loop edges
 
 Detecting loop and multiple edges:
 
-
-```r
+``` r
 is_loopy(funcs)
 ```
 
-```
-#> [1] TRUE
-```
+    #> [1] TRUE
 
-```r
+``` r
 is_multigraph(funcs)
 ```
 
-```
-#> [1] FALSE
-```
+    #> [1] FALSE
 
 Removing loop and multiple edges:
 
-
-```r
+``` r
 is_loopy(remove_loops(funcs))
 ```
 
-```
-#> [1] FALSE
-```
+    #> [1] FALSE
 
-```r
+``` r
 is_multigraph(remove_multiple(funcs))
 ```
 
-```
-#> [1] FALSE
-```
+    #> [1] FALSE
 
-`simplify` removes both loops and multiple edges, so it creates
-a simple graph:
+`simplify` removes both loops and multiple edges, so it creates a simple
+graph:
 
-
-```r
+``` r
 is_loopy(simplify(funcs))
 ```
 
-```
-#> [1] FALSE
-```
+    #> [1] FALSE
 
-```r
+``` r
 is_multigraph(simplify(funcs))
 ```
 
-```
-#> [1] FALSE
-```
+    #> [1] FALSE
 
-```r
+``` r
 is_simple(simplify(funcs))
 ```
 
-```
-#> [1] TRUE
-```
+    #> [1] TRUE
 
 ## License
 
