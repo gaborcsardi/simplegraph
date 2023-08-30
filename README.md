@@ -5,13 +5,13 @@
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
-developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml)
-[![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
+[![](https://www.r-pkg.org/badges/version/simplegraph)](https://www.r-pkg.org/pkg/simplegraph)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
+downloads](https://cranlogs.r-pkg.org/badges/simplegraph)](https://www.r-pkg.org/pkg/simplegraph)
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://codecov.io/github/gaborcsardi/simplegraph?branch=main)
+Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://app.codecov.io/github/gaborcsardi/simplegraph?branch=main)
 
 Simple classic graph algorithms for simple graph classes. Graphs may
 possess vertex and edge attributes. ‘simplegraph’ has no dependencies
