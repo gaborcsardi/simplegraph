@@ -6,11 +6,11 @@
 > Simple Graph Data Types and Basic Algorithms
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Linux Build Status](https://travis-ci.org/MangoTheCat/simplegraph.svg?branch=main)](https://travis-ci.org/MangoTheCat/simplegraph)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/simplegraph?svg=true)](https://ci.appveyor.com/project/gaborcsardi/simplegraph)
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/simplegraph.svg?branch=main)](https://travis-ci.org/gaborcsardi/simplegraph)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/simplegraph?svg=true)](https://ci.appveyor.com/project/gaborcsardi/simplegraph)
 [![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
-[![Coverage Status](https://img.shields.io/codecov/c/github/MangoTheCat/simplegraph/main.svg)](https://codecov.io/github/MangoTheCat/simplegraph?branch=main)
+[![Coverage Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://codecov.io/github/gaborcsardi/simplegraph?branch=main)
 
 Simple classic graph algorithms for simple graph classes.
 Graphs may possess vertex and edge attributes. 'simplegraph' has
@@ -21,7 +21,7 @@ install.
 
 
 ```r
-devtools::install_github("mangothecat/simplegraph")
+devtools::install_github("gaborcsardi/simplegraph")
 ```
 
 ## Usage
