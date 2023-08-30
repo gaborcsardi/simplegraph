@@ -6,8 +6,7 @@
 > Simple Graph Data Types and Basic Algorithms
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/simplegraph.svg?branch=main)](https://travis-ci.org/gaborcsardi/simplegraph)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/simplegraph?svg=true)](https://ci.appveyor.com/project/gaborcsardi/simplegraph)
+[![R-CMD-check](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gaborcsardi/simplegraph/actions/workflows/R-CMD-check.yaml)
 [![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 [![Coverage Status](https://img.shields.io/codecov/c/github/gaborcsardi/simplegraph/main.svg)](https://codecov.io/github/gaborcsardi/simplegraph?branch=main)
