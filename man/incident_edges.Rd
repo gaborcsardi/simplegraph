@@ -24,4 +24,3 @@ incident_edges(G, mode = "out")
 incident_edges(G, mode = "in")
 incident_edges(G, mode = "all")
 }
-

@@ -46,4 +46,3 @@ funcs <- graph(list(
 ))
 edges(transpose(funcs))
 }
-

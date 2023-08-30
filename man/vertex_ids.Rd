@@ -19,4 +19,3 @@ Vertex ids of a graph
 G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
 vertex_ids(G)
 }
-

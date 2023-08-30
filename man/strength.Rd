@@ -50,4 +50,3 @@ G2 <- graph(
 )
 strength(G2)
 }
-

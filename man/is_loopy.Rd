@@ -24,8 +24,11 @@ G2 <- simplify(G)
 is_loopy(G2)
 }
 \seealso{
-Other multigraphs: \code{\link{is_multigraph}},
-  \code{\link{is_simple}}, \code{\link{remove_loops}},
-  \code{\link{remove_multiple}}, \code{\link{simplify}}
+Other multigraphs: 
+\code{\link{is_multigraph}()},
+\code{\link{is_simple}()},
+\code{\link{remove_loops}()},
+\code{\link{remove_multiple}()},
+\code{\link{simplify}()}
 }
-
+\concept{multigraphs}

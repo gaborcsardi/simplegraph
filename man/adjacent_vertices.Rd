@@ -21,7 +21,9 @@ G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
 adjacent_vertices(G)
 }
 \seealso{
-Other simple queries: \code{\link{edges}},
-  \code{\link{order}}, \code{\link{vertices}}
+Other simple queries: 
+\code{\link{edges}()},
+\code{\link{order}()},
+\code{\link{vertices}()}
 }
-
+\concept{simple queries}

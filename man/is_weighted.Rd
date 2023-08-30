@@ -40,4 +40,3 @@ G2 <- graph(
 )
 is_weighted(G2)
 }
-

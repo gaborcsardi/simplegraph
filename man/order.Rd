@@ -20,7 +20,9 @@ G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
 order(G)
 }
 \seealso{
-Other simple queries: \code{\link{adjacent_vertices}},
-  \code{\link{edges}}, \code{\link{vertices}}
+Other simple queries: 
+\code{\link{adjacent_vertices}()},
+\code{\link{edges}()},
+\code{\link{vertices}()}
 }
-
+\concept{simple queries}

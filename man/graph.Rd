@@ -82,4 +82,3 @@ edges <- data.frame(
 actors <- graph(vertices, edges)
 actors
 }
-

@@ -24,4 +24,3 @@ G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
 predecessors(G)
 successors(G)
 }
-

@@ -21,8 +21,11 @@ is_loopy(G)
 is_loopy(remove_loops(G))
 }
 \seealso{
-Other multigraphs: \code{\link{is_loopy}},
-  \code{\link{is_multigraph}}, \code{\link{is_simple}},
-  \code{\link{remove_multiple}}, \code{\link{simplify}}
+Other multigraphs: 
+\code{\link{is_loopy}()},
+\code{\link{is_multigraph}()},
+\code{\link{is_simple}()},
+\code{\link{remove_multiple}()},
+\code{\link{simplify}()}
 }
-
+\concept{multigraphs}

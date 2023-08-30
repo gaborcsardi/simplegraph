@@ -24,4 +24,3 @@ degree(G, mode = "out")
 degree(G, mode = "in")
 degree(G, mode = "total")
 }
-

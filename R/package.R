@@ -8,7 +8,7 @@
 #'
 #' @docType package
 #' @name simplegraph
-NULL
+"_PACKAGE"
 
 #' Create a graph
 #'

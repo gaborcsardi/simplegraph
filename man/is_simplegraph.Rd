@@ -17,4 +17,3 @@ TRUE if \code{x} is a \code{simplegraph} object. \code{FALSE}
 This is currently used for internal assertions
 }
 \keyword{internal}
-

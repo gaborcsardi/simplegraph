@@ -22,8 +22,11 @@ is_multigraph(G)
 is_multigraph(remove_multiple(G))
 }
 \seealso{
-Other multigraphs: \code{\link{is_loopy}},
-  \code{\link{is_multigraph}}, \code{\link{is_simple}},
-  \code{\link{remove_loops}}, \code{\link{simplify}}
+Other multigraphs: 
+\code{\link{is_loopy}()},
+\code{\link{is_multigraph}()},
+\code{\link{is_simple}()},
+\code{\link{remove_loops}()},
+\code{\link{simplify}()}
 }
-
+\concept{multigraphs}

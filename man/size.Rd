@@ -19,4 +19,3 @@ The size of the graph is the number of edges
 G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
 size(G)
 }
-

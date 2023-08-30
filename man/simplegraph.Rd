@@ -11,4 +11,11 @@ Graphs may possess vertex and edge attributes. 'simplegraph' has
 no dependencies and it is writting entirely in R, so it is easy to
 install.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/gaborcsardi/simplegraph}
+  \item Report bugs at \url{https://github.com/gaborcsardi/simplegraph/issues}
+}
 
+}

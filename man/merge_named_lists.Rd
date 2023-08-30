@@ -16,4 +16,3 @@ Elements with common names are concatenated. If both lists have
 \code{NULL} for an element, then \code{default} is used instead.
 }
 \keyword{internal}
-

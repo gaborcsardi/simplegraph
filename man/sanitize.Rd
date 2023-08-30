@@ -22,4 +22,3 @@ sanitize(G)
 G <- c(G, list("this is not good" = c(1, 2, 3)))
 try(sanitize(G))
 }
-

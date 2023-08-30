@@ -18,4 +18,3 @@ is_vertices_of(v, g)
 Check if the an object is a sequence of vertices from a graph
 }
 \keyword{internal}
-

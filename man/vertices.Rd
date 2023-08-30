@@ -43,7 +43,9 @@ bridges <- graph(list(
 vertices(bridges)
 }
 \seealso{
-Other simple queries: \code{\link{adjacent_vertices}},
-  \code{\link{edges}}, \code{\link{order}}
+Other simple queries: 
+\code{\link{adjacent_vertices}()},
+\code{\link{edges}()},
+\code{\link{order}()}
 }
-
+\concept{simple queries}

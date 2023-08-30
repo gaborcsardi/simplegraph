@@ -44,4 +44,3 @@ funcs <- graph(list(
 ))
 topological_sort(remove_loops(funcs))
 }
-
