@@ -1,7 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^Makefile$
-^README.md$
+^README\.Rmd$
+^README\.html$
 ^.travis.yml$
 ^appveyor.yml$
 ^\.github$
